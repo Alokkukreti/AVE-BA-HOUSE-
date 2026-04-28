@@ -42,27 +42,28 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 40px;
   height: 72px;
   background: rgba(19,31,42,0.97);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(184,151,58,0.18);
+  overflow: hidden;
 }
-.nav-logo { display: flex; flex-direction: column; text-decoration: none; cursor: pointer; }
-.nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; letter-spacing: 0.2em; color: var(--white); }
+.nav-logo { display: flex; flex-direction: column; text-decoration: none; cursor: pointer; flex-shrink: 0; }
+.nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 300; letter-spacing: 0.18em; color: var(--white); white-space: nowrap; }
 .nav-logo-main span { color: var(--gold); }
-.nav-logo-sub { font-size: 7px; font-weight: 400; letter-spacing: 0.3em; color: rgba(184,151,58,0.6); text-transform: uppercase; margin-top: 1px; }
-.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-.nav-links a { font-size: 8.5px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.3s; cursor: pointer; }
+.nav-logo-sub { font-size: 6.5px; font-weight: 400; letter-spacing: 0.25em; color: rgba(184,151,58,0.6); text-transform: uppercase; margin-top: 1px; }
+.nav-links { display: flex; gap: 20px; list-style: none; align-items: center; flex-shrink: 0; }
+.nav-links a { font-size: 8px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.3s; cursor: pointer; white-space: nowrap; }
 .nav-links a:hover { color: var(--gold-lt); }
 .nav-india-link {
-  font-size: 8px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  font-size: 7.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--saffron) !important;
-  border: 1px solid rgba(212,114,42,0.4); padding: 5px 12px;
-  transition: all 0.3s !important;
+  border: 1px solid rgba(212,114,42,0.4); padding: 5px 10px;
+  transition: all 0.3s !important; white-space: nowrap;
 }
 .nav-india-link:hover { background: var(--saffron) !important; color: var(--white) !important; }
-.nav-cta { font-size: 8px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 10px 22px; text-decoration: none; transition: background 0.3s; cursor: pointer; }
+.nav-cta { font-size: 7.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 9px 18px; text-decoration: none; transition: background 0.3s; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
 .nav-cta:hover { background: var(--gold-lt); }
 
 /* ── HERO ── */
@@ -843,9 +844,9 @@ body.india-mode #india-page { display: block; }
   </div>
 
   <!-- STUDENT OFFER BLOCK -->
-  <div style="background:linear-gradient(150deg,#0E1318 0%,#1a1208 60%,#0E1318 100%);padding:96px 64px;">
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
-      <div>
+  <div style="background:linear-gradient(150deg,#0E1318 0%,#1a1208 60%,#0E1318 100%);padding:80px 48px;">
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;">
+      <div style="min-width:0;overflow:hidden;">
         <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(212,114,42,0.1);border:1px solid rgba(212,114,42,0.25);padding:7px 16px;margin-bottom:24px;">
           <div style="width:7px;height:7px;background:var(--saffron);border-radius:50%;animation:pulse 2s ease infinite;"></div>
           <div style="font-size:9px;font-weight:700;letter-spacing:0.45em;text-transform:uppercase;color:#E8935A;">Hotel Management Students & Graduates</div>
@@ -860,7 +861,7 @@ body.india-mode #india-page { display: block; }
         </div>
         <a href="mailto:india@aveba.com.au?subject=Student Career Diagnostic" style="display:inline-block;padding:13px 28px;font-size:9px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#fff;background:var(--saffron);text-decoration:none;font-family:'Raleway',sans-serif;">Book Free Diagnostic →</a>
       </div>
-      <div style="display:flex;flex-direction:column;gap:2px;">
+      <div style="display:flex;flex-direction:column;gap:2px;min-width:0;overflow:hidden;">
         <div style="font-size:8px;font-weight:600;letter-spacing:0.5em;text-transform:uppercase;color:rgba(200,188,168,0.4);margin-bottom:16px;">Career Tracks You're Eligible For</div>
         <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:2px solid var(--saffron);padding:16px 20px;"><div style="font-size:8px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:var(--saffron);margin-bottom:6px;">Track 01 · Hotel Operations</div><div style="font-size:12px;font-weight:300;color:rgba(200,188,168,0.8);line-height:1.6;">Front Office → Duty Manager → Department Head → <strong style="color:#FAF6EE;">General Manager.</strong> The core track. Luxury boutique properties teach more in Year 1 than a chain in Year 3.</div></div>
         <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:2px solid var(--saffron);padding:16px 20px;"><div style="font-size:8px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:var(--saffron);margin-bottom:6px;">Track 02 · Revenue & Sales</div><div style="font-size:12px;font-weight:300;color:rgba(200,188,168,0.8);line-height:1.6;">Reservations → Revenue Manager → <strong style="color:#FAF6EE;">Director of Sales & Marketing.</strong> The highest-growth, best-paid track in Indian hospitality.</div></div>
