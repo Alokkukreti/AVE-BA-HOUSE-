@@ -428,19 +428,19 @@ body.india-mode #india-page { display: block; }
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" onclick="showMain()">
+  <a class="nav-logo" onclick="showMain()" style="cursor:pointer;">
     <span class="nav-logo-main">AVE<span>-</span>BA HOUSE</span>
     <span class="nav-logo-sub">Quiet Luxury for Everyday Living</span>
   </a>
   <ul class="nav-links">
-    <li><a onclick="showMain(); scrollTo('#origin')">Our Story</a></li>
-    <li><a onclick="showMain(); scrollTo('#divisions')">Our Brands</a></li>
-    <li><a onclick="showMain(); scrollTo('#consultancy')">Consultancy</a></li>
-    <li><a onclick="showMain(); scrollTo('#philosophy-section')">Philosophy</a></li>
-    <li><a class="nav-india-link" onclick="showIndia()">India ↗</a></li>
-    <li><a onclick="showMain(); scrollTo('#contact')">Contact</a></li>
+    <li><a onclick="navTo('origin')" style="cursor:pointer;">Our Story</a></li>
+    <li><a onclick="navTo('divisions')" style="cursor:pointer;">Our Brands</a></li>
+    <li><a onclick="navTo('consultancy')" style="cursor:pointer;">Consultancy</a></li>
+    <li><a onclick="navTo('philosophy-section')" style="cursor:pointer;">Philosophy</a></li>
+    <li><a class="nav-india-link" onclick="showIndia()" style="cursor:pointer;">India ↗</a></li>
+    <li><a onclick="navTo('contact')" style="cursor:pointer;">Contact</a></li>
   </ul>
-  <a onclick="showMain(); scrollTo('#contact')" class="nav-cta">Enquire Now</a>
+  <a onclick="navTo('contact')" class="nav-cta" style="cursor:pointer;">Enquire Now</a>
 </nav>
 
 <!-- ══════════════════ MAIN SITE ══════════════════ -->
@@ -653,7 +653,7 @@ body.india-mode #india-page { display: block; }
       </div>
       <div class="india-actions">
         <button class="btn-india-primary" onclick="showIndia()">Visit India Page →</button>
-        <a href="mailto:india@aveba.com.au" class="btn-india-outline">india@aveba.com.au</a>
+        <a href="mailto:india@aveba.com.au?subject=India Enquiry" class="btn-india-outline">india@aveba.com.au</a>
       </div>
     </div>
     <div class="india-right reveal d2">
@@ -675,7 +675,7 @@ body.india-mode #india-page { display: block; }
       </div>
       <div class="india-student-badge">
         <div class="isb-dot"></div>
-        <div class="isb-text"><strong>Hotel Management Students & Graduates:</strong> 25% off all services. Free 30-min career call. Valid 3 years post-graduation. <span style="color:var(--saffron);cursor:pointer;" onclick="showIndia()">Learn more →</span></div>
+        <div class="isb-text"><strong>Hotel Management Students & Graduates:</strong> 25% off all services. Free 30-min career call. Valid 3 years post-graduation. <span style="color:var(--saffron);cursor:pointer;text-decoration:underline;" onclick="showIndia()">Learn more →</span></div>
       </div>
     </div>
   </div>
@@ -709,15 +709,15 @@ body.india-mode #india-page { display: block; }
       <div class="gold-rule"><div class="gr-line s" style="background:rgba(184,151,58,0.4);"></div><div class="gr-dot"></div><div class="gr-line l" style="background:rgba(184,151,58,0.4);"></div></div>
       <p>Whether you are opening a new property, looking for bespoke design, or want to partner with Ave-Ba House — we would love to hear from you.</p>
       <div class="contact-details">
-        <div class="c-item"><span class="c-label">Phone</span><span class="c-val">0432 104 699</span></div>
-        <div class="c-item"><span class="c-label">Email</span><span class="c-val">alok@aveba.com.au</span></div>
-        <div class="c-item"><span class="c-label">India</span><span class="c-val">india@aveba.com.au</span></div>
+        <div class="c-item"><span class="c-label">Phone</span><a href="tel:+61432104699" class="c-val" style="color:rgba(255,255,255,0.7);text-decoration:none;">0432 104 699</a></div>
+        <div class="c-item"><span class="c-label">Email</span><a href="mailto:alok@aveba.com.au" class="c-val" style="color:rgba(255,255,255,0.7);text-decoration:none;">alok@aveba.com.au</a></div>
+        <div class="c-item"><span class="c-label">India</span><a href="mailto:india@aveba.com.au" class="c-val" style="color:rgba(212,114,42,0.8);text-decoration:none;">india@aveba.com.au</a></div>
         <div class="c-item"><span class="c-label">Web</span><span class="c-val">aveba.com.au</span></div>
         <div class="c-item"><span class="c-label">Location</span><span class="c-val">Sydney, NSW · Available Globally</span></div>
       </div>
       <div class="book-box">
         <div class="book-box-text"><strong>Book a Discovery Call</strong><span>30 minutes · Obligation free</span></div>
-        <a href="https://calendly.com/alok-aveba/30min" target="_blank" class="btn-book">Book Now</a>
+        <a href="https://calendly.com/alok-aveba/30min" target="_blank" rel="noopener" class="btn-book">Book Now</a>
       </div>
     </div>
     <div class="reveal d2">
@@ -764,28 +764,28 @@ body.india-mode #india-page { display: block; }
       <div class="footer-div-group">
         <div class="footer-div-head">Our Divisions</div>
         <div class="footer-div-items">
-          <a onclick="showMain(); scrollTo('#consultancy')">Consultancy</a>
-          <a onclick="showMain(); scrollTo('#divisions')">Atelier</a>
-          <a onclick="showMain(); scrollTo('#divisions')">Loom</a>
-          <a onclick="showIndia()" style="color:rgba(212,114,42,0.6);">India Practice ↗</a>
+          <a onclick="navTo('consultancy')" style="cursor:pointer;">Consultancy</a>
+          <a onclick="navTo('divisions')" style="cursor:pointer;">Atelier</a>
+          <a onclick="navTo('divisions')" style="cursor:pointer;">Loom</a>
+          <a onclick="showIndia()" style="color:rgba(212,114,42,0.6);cursor:pointer;">India Practice ↗</a>
         </div>
       </div>
       <div class="footer-div-group">
         <div class="footer-div-head">Navigate</div>
         <div class="footer-div-items">
-          <a onclick="showMain(); scrollTo('#origin')">Our Story</a>
-          <a onclick="showMain(); scrollTo('#about')">About</a>
-          <a onclick="showMain(); scrollTo('#pricing')">Engagement</a>
-          <a onclick="showMain(); scrollTo('#contact')">Contact</a>
+          <a onclick="navTo('origin')" style="cursor:pointer;">Our Story</a>
+          <a onclick="navTo('about')" style="cursor:pointer;">About</a>
+          <a onclick="navTo('pricing')" style="cursor:pointer;">Engagement</a>
+          <a onclick="navTo('contact')" style="cursor:pointer;">Contact</a>
         </div>
       </div>
       <div class="footer-div-group">
         <div class="footer-div-head">Contact</div>
         <div class="footer-div-items">
-          <a href="mailto:alok@aveba.com.au">alok@aveba.com.au</a>
-          <a href="mailto:india@aveba.com.au">india@aveba.com.au</a>
-          <a href="tel:0432104699">0432 104 699</a>
-          <a href="https://aveba.com.au">aveba.com.au</a>
+          <a href="mailto:alok@aveba.com.au" style="cursor:pointer;">alok@aveba.com.au</a>
+          <a href="mailto:india@aveba.com.au" style="cursor:pointer;">india@aveba.com.au</a>
+          <a href="tel:+61432104699" style="cursor:pointer;">0432 104 699</a>
+          <a href="https://aveba.com.au" target="_blank" style="cursor:pointer;">aveba.com.au</a>
         </div>
       </div>
     </div>
@@ -795,7 +795,7 @@ body.india-mode #india-page { display: block; }
     <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
-      <a onclick="showMain(); scrollTo('#contact')">Contact</a>
+      <a onclick="navTo('contact')" style="cursor:pointer;">Contact</a>
     </div>
   </div>
 </footer>
@@ -879,8 +879,10 @@ body.india-mode #india-page { display: block; }
       <div style="font-size:9px;font-weight:600;letter-spacing:0.55em;text-transform:uppercase;color:rgba(253,250,245,0.7);margin-bottom:16px;">Start Here</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:16px;">Your free 30-minute<br><em style="font-style:italic;">diagnostic call.</em></div>
       <div style="font-size:13px;font-weight:300;color:rgba(253,250,245,0.8);line-height:1.9;margin-bottom:36px;">Hotel owner, rural operator, or hospitality graduate — the first conversation is always free and always honest. Email us mentioning your property, institute, or location.</div>
-      <a href="mailto:india@aveba.com.au?subject=India Diagnostic Call" style="display:inline-block;padding:14px 36px;font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--saffron);background:#fff;text-decoration:none;font-family:'Raleway',sans-serif;margin-bottom:16px;">india@aveba.com.au</a>
-      <div style="font-size:11px;color:rgba(253,250,245,0.6);">Or book via Calendly · aveba.com.au/india/book</div>
+      <a href="mailto:india@aveba.com.au?subject=India Diagnostic Call Request" style="display:inline-block;padding:14px 36px;font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--saffron);background:#fff;text-decoration:none;font-family:'Raleway',sans-serif;margin-bottom:16px;">india@aveba.com.au</a>
+      <div style="margin-top:8px;">
+        <a href="https://calendly.com/alok-aveba/30min" target="_blank" rel="noopener" style="font-size:11px;color:rgba(253,250,245,0.75);text-decoration:underline;font-family:'Raleway',sans-serif;">Or book directly via Calendly →</a>
+      </div>
     </div>
   </div>
 
@@ -896,47 +898,87 @@ body.india-mode #india-page { display: block; }
 </div><!-- end #india-page -->
 
 <script>
-  // Reveal on scroll
+  // ── SCROLL REVEAL ──
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
   reveals.forEach(el => obs.observe(el));
 
-  // Page routing
-  function showMain() {
+  // ── PAGE ROUTING ──
+  // Use navTo() instead of scrollTo() to avoid conflict with window.scrollTo
+  function showMain(anchorId) {
     document.getElementById('main-site').style.display = 'block';
     document.getElementById('india-page').style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    history.pushState({}, '', '/');
+    // Only push state when running on a real server (not file://)
+    try {
+      if (window.location.protocol !== 'file:') {
+        history.pushState({page: 'main'}, '', '/');
+      }
+    } catch(e) {}
+    if (anchorId) {
+      setTimeout(() => {
+        var el = document.getElementById(anchorId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 120);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   function showIndia() {
     document.getElementById('main-site').style.display = 'none';
     document.getElementById('india-page').style.display = 'block';
+    try {
+      if (window.location.protocol !== 'file:') {
+        history.pushState({page: 'india'}, '', '/india');
+      }
+    } catch(e) {}
     window.scrollTo({ top: 0 });
-    history.pushState({}, '', '/india');
   }
 
-  function scrollTo(id) {
-    setTimeout(() => {
-      const el = document.querySelector(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  // Named navTo so it doesn't clash with native window.scrollTo
+  function navTo(anchorId) {
+    showMain(anchorId);
   }
 
-  // Check URL on load
-  if (window.location.pathname === '/india' || window.location.hash === '#india') {
-    showIndia();
-  }
+  // ── LOAD: check URL ──
+  (function() {
+    var path = window.location.pathname;
+    var hash = window.location.hash;
+    if (path === '/india' || path.indexOf('/india') === 0 || hash === '#india') {
+      showIndia();
+    }
+  })();
 
-  // Handle browser back/forward
-  window.addEventListener('popstate', () => {
-    if (window.location.pathname === '/india') showIndia();
+  // ── BROWSER BACK / FORWARD ──
+  window.addEventListener('popstate', function(e) {
+    if (e.state && e.state.page === 'india') showIndia();
     else showMain();
   });
+
+  // ── CONTACT FORM SUBMIT FEEDBACK ──
+  var contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      var btn = this.querySelector('.btn-submit');
+      if (btn) {
+        setTimeout(function() {
+          btn.textContent = 'Sent ✓';
+          btn.style.background = '#2a5e2e';
+          btn.style.color = '#fff';
+          setTimeout(function() {
+            btn.textContent = 'Send Enquiry';
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 3500);
+        }, 400);
+      }
+    });
+  }
 </script>
 
 </body>
 </html>
-
