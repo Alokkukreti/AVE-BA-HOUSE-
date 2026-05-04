@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AVE-BA CONSULTANCY — Hospitality Advisory & Management</title>
+<meta name="description" content="Ave-Ba Consultancy delivers hospitality advisory, pre-opening strategy, operations review, revenue optimisation and guest experience design. Sydney, Australia — Global."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#1C2B3A;--navy-d:#0F1920;--navy-mid:#243547;
+  --gold:#B8973A;--gold-lt:#D4AF6A;--gold-pale:#E8D9B0;
+  --cream:#FAF7F2;--sand:#E7DED2;--muted:#7A7060;
+  --text:#2C2C2C;--white:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--text);font-family:'Raleway',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(15,25,32,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(184,151,58,0.12);}
+.nav-logo{display:flex;flex-direction:column;text-decoration:none;}
+.nav-logo-main{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;letter-spacing:.2em;color:var(--white);}
+.nav-logo-main em{color:var(--gold);font-style:normal;}
+.nav-logo-sub{font-size:6.5px;font-weight:500;letter-spacing:.35em;color:rgba(184,151,58,.5);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:8px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:var(--gold-lt);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--gold);}
+.nav-cta{font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-d);background:var(--gold);padding:10px 22px;text-decoration:none;transition:background .3s;}
+.nav-cta:hover{background:var(--gold-lt);}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:140px 40px 100px;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 42%,rgba(184,151,58,.07) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;top:72px;left:36px;right:36px;bottom:36px;border:.5px solid rgba(184,151,58,.12);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(rgba(184,151,58,.025) 0,rgba(184,151,58,.025) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(90deg,rgba(184,151,58,.025) 0,rgba(184,151,58,.025) 1px,transparent 1px,transparent 80px);pointer-events:none;}
+.hero-parent{font-size:8px;font-weight:500;letter-spacing:.45em;color:rgba(184,151,58,.4);text-transform:uppercase;margin-bottom:20px;text-decoration:none;display:block;opacity:0;animation:riseIn .8s .1s ease forwards;transition:color .3s;}
+.hero-parent:hover{color:var(--gold);}
+.hero-wordmark{font-family:'Cormorant Garamond',serif;font-size:clamp(72px,11vw,140px);font-weight:300;letter-spacing:.08em;color:var(--white);line-height:.9;opacity:0;animation:riseIn .9s .3s ease forwards;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,36px);font-style:italic;letter-spacing:.3em;color:var(--gold);margin-top:12px;opacity:0;animation:riseIn .9s .5s ease forwards;}
+.hero-rule{display:flex;align-items:center;gap:16px;margin:36px auto;width:min(360px,70vw);opacity:0;animation:riseIn .9s .65s ease forwards;}
+.hr-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(184,151,58,.3),transparent);}
+.hr-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.6;flex-shrink:0;}
+.hero-tagline{font-size:9px;letter-spacing:.4em;color:rgba(255,255,255,.22);text-transform:uppercase;opacity:0;animation:riseIn .9s .8s ease forwards;}
+.hero-stats{display:flex;gap:0;margin-top:56px;opacity:0;animation:riseIn 1s 1s ease forwards;}
+.hs-item{padding:18px 32px;border:1px solid rgba(184,151,58,.18);border-right:none;text-align:center;}
+.hs-item:last-child{border-right:1px solid rgba(184,151,58,.18);}
+.hs-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:4px;}
+.hs-label{font-size:7px;font-weight:500;letter-spacing:.22em;color:rgba(255,255,255,.35);text-transform:uppercase;}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:riseIn .9s 1.3s ease forwards;}
+.scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,rgba(184,151,58,.6),transparent);animation:pulse 2s ease-in-out infinite;}
+.hero-scroll span{font-size:7px;letter-spacing:.35em;color:rgba(255,255,255,.18);text-transform:uppercase;}
+
+/* SHARED */
+.inner{max-width:1080px;margin:0 auto;padding:0 60px;}
+.section-label{font-size:8px;font-weight:600;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.15;margin-bottom:24px;}
+.section-title.dark{color:var(--navy);}
+.section-title.light{color:var(--white);}
+.gold-rule{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+.gr-line{height:1px;background:var(--gold);}
+.gr-line.s{width:40px;}.gr-line.l{width:100px;}
+.gr-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+/* ABOUT STRIP */
+.about-section{padding:100px 0;background:var(--cream);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-body{font-size:11.5px;line-height:1.95;color:var(--muted);}
+.about-body p+p{margin-top:16px;}
+.about-right{display:flex;flex-direction:column;gap:3px;}
+.stat-block{background:var(--navy);padding:22px 28px;display:flex;align-items:center;gap:20px;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);min-width:64px;}
+.stat-label{font-size:7.5px;font-weight:600;letter-spacing:.25em;color:var(--gold-lt);text-transform:uppercase;margin-bottom:2px;}
+.stat-sub{font-size:10px;color:rgba(255,255,255,.4);}
+
+/* SERVICES */
+.services-section{padding:100px 0;background:var(--navy);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+.service-card{background:var(--navy-mid);padding:44px 36px;border:1px solid rgba(184,151,58,.08);border-bottom:2px solid transparent;transition:border-color .3s,transform .3s,background .3s;}
+.service-card:hover{border-color:rgba(184,151,58,.4);border-bottom-color:var(--gold);background:rgba(36,53,71,.9);transform:translateY(-3px);}
+.sc-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:rgba(184,151,58,.1);line-height:1;margin-bottom:16px;}
+.sc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.3;}
+.sc-desc{font-size:10.5px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.45);}
+
+/* HOW WE WORK */
+.process-section{padding:100px 0;background:var(--cream);}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+.process-card{background:var(--white);padding:40px 32px;border-bottom:2px solid transparent;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.process-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(28,43,58,.08);border-bottom-color:var(--gold);}
+.pc-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--sand);line-height:1;margin-bottom:16px;}
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.pc-desc{font-size:10.5px;font-weight:300;line-height:1.85;color:var(--muted);}
+
+/* PRICING */
+.pricing-section{padding:100px 0;background:var(--navy-d);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+.pricing-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,151,58,.12);padding:48px 36px;text-align:center;transition:background .3s,border-color .3s;position:relative;}
+.pricing-card:hover{background:rgba(184,151,58,.05);border-color:rgba(184,151,58,.35);}
+.pricing-card.featured{background:var(--gold);border-color:var(--gold);}
+.pricing-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold-lt);color:var(--navy);font-size:7px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:4px 12px;}
+.p-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold-lt);line-height:1;margin-bottom:8px;}
+.pricing-card.featured .p-num{color:var(--navy);}
+.p-type{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);margin-bottom:20px;}
+.pricing-card.featured .p-type{color:var(--navy);}
+.p-div{width:36px;height:1px;background:rgba(184,151,58,.35);margin:0 auto 20px;}
+.pricing-card.featured .p-div{background:rgba(28,43,58,.25);}
+.p-desc{font-size:10px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:28px;}
+.pricing-card.featured .p-desc{color:rgba(28,43,58,.65);}
+.p-price{display:inline-block;padding:10px 22px;border:1px solid rgba(184,151,58,.4);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--gold-lt);}
+.pricing-card.featured .p-price{border-color:rgba(28,43,58,.3);color:var(--navy);}
+
+/* CREDENTIALS */
+.cred-section{padding:100px 0;background:var(--sand);}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;}
+.cred-card{background:var(--white);padding:36px 28px;text-align:center;border-bottom:2px solid transparent;transition:border-color .3s;}
+.cred-card:hover{border-bottom-color:var(--gold);}
+.cred-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:8px;}
+.cred-label{font-size:8px;font-weight:600;letter-spacing:.22em;color:var(--navy);text-transform:uppercase;margin-bottom:6px;}
+.cred-desc{font-size:10px;color:var(--muted);line-height:1.6;}
+
+/* CONTACT */
+.contact-section{padding:100px 0;background:var(--navy-d);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-body{font-size:11px;line-height:1.95;color:rgba(255,255,255,.45);margin-bottom:36px;}
+.contact-details{display:flex;flex-direction:column;gap:12px;}
+.c-item{display:flex;align-items:center;gap:16px;}
+.c-label{font-size:7px;font-weight:600;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;width:72px;flex-shrink:0;}
+.c-val{font-size:11px;font-weight:300;color:rgba(255,255,255,.65);}
+.book-box{margin-top:28px;padding:22px;border:1px solid rgba(184,151,58,.18);display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.book-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--white);display:block;margin-bottom:3px;}
+.book-sub{font-size:9.5px;color:rgba(255,255,255,.35);}
+.btn-book{background:transparent;border:1px solid var(--gold);padding:11px 22px;font-family:'Raleway',sans-serif;font-size:7.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);cursor:pointer;text-decoration:none;white-space:nowrap;transition:all .3s;}
+.btn-book:hover{background:var(--gold);color:var(--navy-d);}
+.contact-form{display:flex;flex-direction:column;gap:12px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-group{display:flex;flex-direction:column;gap:5px;}
+.form-group label{font-size:7px;font-weight:600;letter-spacing:.25em;color:rgba(255,255,255,.3);text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(184,151,58,.16);padding:12px 14px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;color:var(--white);outline:none;transition:border-color .3s;width:100%;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.18);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group select{appearance:none;cursor:pointer;}
+.form-group select option{background:var(--navy);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.btn-submit{background:var(--gold);border:none;padding:14px 36px;font-family:'Raleway',sans-serif;font-size:8px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--navy-d);cursor:pointer;transition:background .3s;align-self:flex-start;margin-top:4px;}
+.btn-submit:hover{background:var(--gold-lt);}
+.btn-submit:disabled{opacity:.6;cursor:wait;}
+.form-note{font-size:8.5px;color:rgba(255,255,255,.2);font-style:italic;}
+.form-success{display:none;background:rgba(42,94,46,.12);border:1px solid rgba(42,180,46,.18);padding:18px 22px;text-align:center;}
+.form-success strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:#6DCF7A;font-weight:300;margin-bottom:4px;}
+.form-success p{font-size:10.5px;color:rgba(255,255,255,.4);}
+
+/* FOOTER */
+footer{background:#080E14;border-top:1px solid rgba(184,151,58,.1);padding:52px 60px 32px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:44px;flex-wrap:wrap;gap:32px;}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:.15em;color:var(--white);margin-bottom:4px;}
+.footer-name em{color:var(--gold);font-style:normal;}
+.footer-tag{font-size:7.5px;letter-spacing:.3em;color:rgba(184,151,58,.4);text-transform:uppercase;}
+.footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col-head{font-size:7.5px;font-weight:600;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
+.footer-col-links{display:flex;flex-direction:column;gap:7px;}
+.footer-col-links a{font-size:10px;font-weight:300;color:rgba(255,255,255,.35);text-decoration:none;transition:color .3s;}
+.footer-col-links a:hover{color:var(--gold-lt);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:7.5px;color:rgba(255,255,255,.15);letter-spacing:.1em;}
+.footer-legal{display:flex;gap:24px;}
+.footer-legal a{font-size:7.5px;color:rgba(255,255,255,.18);text-decoration:none;transition:color .3s;}
+.footer-legal a:hover{color:var(--gold);}
+
+/* ANIMATIONS */
+@keyframes riseIn{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:0 24px;}
+  .inner{padding:0 24px;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px;}
+  .services-grid,.process-grid,.pricing-grid{grid-template-columns:1fr;}
+  .cred-grid{grid-template-columns:repeat(2,1fr);}
+  footer{padding:40px 24px 24px;}
+  .hero-stats{flex-direction:column;align-items:center;}
+  .hs-item{border-right:1px solid rgba(184,151,58,.18);width:260px;}
+}
+@media(max-width:700px){
+  .nav-links{display:none;}
+  .form-row{grid-template-columns:1fr;}
+  .cred-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-main">AVE<em>-</em>BA HOUSE</span>
+    <span class="nav-logo-sub">Luxury for Everyday Living</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/consultancy" class="active">Consultancy</a></li>
+    <li><a href="/atelier">Atelier</a></li>
+    <li><a href="/loom">Loom</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Enquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <a href="/" class="hero-parent">← Ave-Ba House</a>
+  <div class="hero-wordmark">AVE-BA</div>
+  <div class="hero-sub">Consultancy</div>
+  <div class="hero-rule"><div class="hr-line"></div><div class="hr-dot"></div><div class="hr-line"></div></div>
+  <div class="hero-tagline">Hospitality Advisory &amp; Management · Sydney · Global</div>
+  <div class="hero-stats">
+    <div class="hs-item"><div class="hs-num">20+</div><div class="hs-label">Years Experience</div></div>
+    <div class="hs-item"><div class="hs-num">1,000+</div><div class="hs-label">Rooms Managed</div></div>
+    <div class="hs-item"><div class="hs-num">10+</div><div class="hs-label">Properties Led</div></div>
+    <div class="hs-item"><div class="hs-num">4–5★</div><div class="hs-label">Hotel Tier</div></div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-bar"></div><span>Our Services</span></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="section-label">Ave-Ba Consultancy</div>
+        <div class="section-title dark">Senior Hospitality<br>Expertise, On Demand</div>
+        <div class="gold-rule"><div class="gr-line s"></div><div class="gr-dot"></div><div class="gr-line l"></div></div>
+        <div class="about-body">
+          <p>Ave-Ba Consultancy brings over 20 years of senior hotel leadership to properties that want to perform better. Whether you are opening a new asset, diagnosing a failing department, or repositioning an underperforming venue — we work on-site, hands-on, and alongside your team.</p>
+          <p>We have led 4★ and 5★ properties across Australia and internationally — from serviced apartments to full-service hotels with F&B, spa and events. Our approach is direct, practical and measurable. No templates. No generic frameworks. Every engagement is built around your property, your team, and your numbers.</p>
+        </div>
+      </div>
+      <div class="about-right reveal d2">
+        <div class="stat-block"><div class="stat-n">20+</div><div><div class="stat-label">Years Experience</div><div class="stat-sub">Global luxury hotel leadership</div></div></div>
+        <div class="stat-block"><div class="stat-n">1,000+</div><div><div class="stat-label">Rooms Managed</div><div class="stat-sub">Across Australia &amp; internationally</div></div></div>
+        <div class="stat-block"><div class="stat-n">10+</div><div><div class="stat-label">Properties Led</div><div class="stat-sub">4★ – 5★ &amp; serviced apartments</div></div></div>
+        <div class="stat-block"><div class="stat-n">AU</div><div><div class="stat-label">Base</div><div class="stat-sub">Sydney, NSW · Available globally</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--gold-lt);">What We Deliver</div>
+      <div class="section-title light">Six Core Service Areas</div>
+      <div class="gold-rule"><div class="gr-line s" style="background:rgba(184,151,58,.4);"></div><div class="gr-dot"></div><div class="gr-line l" style="background:rgba(184,151,58,.4);"></div></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal d1">
+        <div class="sc-num">01</div>
+        <div class="sc-name">Pre-Opening &amp; Relaunch</div>
+        <div class="sc-desc">End-to-end advisory for new properties or refurbishments. SOPs, team structure, brand standards, technology stack and soft-open strategy — delivered before the first guest arrives.</div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="sc-num">02</div>
+        <div class="sc-name">Operations Review</div>
+        <div class="sc-desc">On-site diagnostic across all departments. Prioritised action plan and measurable KPI targets delivered within two weeks. No fluff — specific improvements with specific owners.</div>
+      </div>
+      <div class="service-card reveal d3">
+        <div class="sc-num">03</div>
+        <div class="sc-name">Revenue Optimisation</div>
+        <div class="sc-desc">Occupancy strategy, yield management, channel mix and under-leveraged revenue stream development. Tailored to your property size, market position and existing capability.</div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="sc-num">04</div>
+        <div class="sc-name">Guest Experience Design</div>
+        <div class="sc-desc">Service standards, guest journey mapping, complaint resolution frameworks and loyalty concepts — aligned to your brand and measurable against NPS and review metrics.</div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="sc-num">05</div>
+        <div class="sc-name">People &amp; Culture</div>
+        <div class="sc-desc">Talent frameworks, training programs, performance management systems and culture-building for high-performing hospitality teams. Because the service is only as good as the people delivering it.</div>
+      </div>
+      <div class="service-card reveal d3">
+        <div class="sc-num">06</div>
+        <div class="sc-name">F&amp;B Strategy</div>
+        <div class="sc-desc">Outlet concept development, menu profitability analysis, staffing models and repositioning for hotel dining, rooftop bars and standalone venues. Revenue and guest experience, together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="process-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Our Approach</div>
+      <div class="section-title dark">How We Work Together</div>
+      <div class="gold-rule"><div class="gr-line s"></div><div class="gr-dot"></div><div class="gr-line l"></div></div>
+    </div>
+    <div class="process-grid">
+      <div class="process-card reveal d1">
+        <div class="pc-num">01</div>
+        <div class="pc-name">Discovery Call</div>
+        <div class="pc-desc">30 minutes. We understand your property, your challenge and your objectives. No cost, no obligation. We'll tell you honestly whether we're the right fit and what an engagement would look like.</div>
+      </div>
+      <div class="process-card reveal d2">
+        <div class="pc-num">02</div>
+        <div class="pc-name">Scoped Proposal</div>
+        <div class="pc-desc">A clear proposal within 48 hours — scope, timeline, deliverables and fixed price. No surprises, no scope creep. You know exactly what you're getting before you commit.</div>
+      </div>
+      <div class="process-card reveal d3">
+        <div class="pc-num">03</div>
+        <div class="pc-name">On-Site Delivery</div>
+        <div class="pc-desc">We work in your property, with your team. Not via Zoom presentations. Hands-on, practical and collaborative — your people are part of the solution, not recipients of a report.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="engagement">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--gold-lt);">Consultancy Engagement</div>
+      <div class="section-title light">Transparent Pricing</div>
+      <div class="gold-rule"><div class="gr-line s" style="background:rgba(184,151,58,.4);"></div><div class="gr-dot"></div><div class="gr-line l" style="background:rgba(184,151,58,.4);"></div></div>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal d1">
+        <div class="p-num">01</div>
+        <div class="p-type">Day Consulting</div>
+        <div class="p-div"></div>
+        <div class="p-desc">Intensive on-site or virtual sessions for critical decisions, leadership workshops or deep operational dives. Ideal for urgent issues or one-off strategy days.</div>
+        <div class="p-price">From $900 / Day</div>
+      </div>
+      <div class="pricing-card featured reveal d2">
+        <div class="pricing-tag">Most Popular</div>
+        <div class="p-num">02</div>
+        <div class="p-type">Project Engagement</div>
+        <div class="p-div"></div>
+        <div class="p-desc">Fixed scope — SOP packages, pre-opening guides, operational audits or F&amp;B repositioning projects. Clear deliverables, fixed price, defined timeline.</div>
+        <div class="p-price">From $2,500 / Project</div>
+      </div>
+      <div class="pricing-card reveal d3">
+        <div class="p-num">03</div>
+        <div class="p-type">Advisory Retainer</div>
+        <div class="p-div"></div>
+        <div class="p-desc">Ongoing monthly advisory — strategy, support and accountability. A senior hospitality mind available when you need it. Ideal for GMs and owners who want ongoing access.</div>
+        <div class="p-price">From $2,000 / Month</div>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:32px;font-size:9.5px;color:rgba(255,255,255,.3);font-style:italic;letter-spacing:.1em;">All engagements tailored to your property size, scope and objectives · Global availability</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="cred-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Track Record</div>
+      <div class="section-title dark">Proven at Scale</div>
+      <div class="gold-rule"><div class="gr-line s"></div><div class="gr-dot"></div><div class="gr-line l"></div></div>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card reveal d1"><div class="cred-num">20+</div><div class="cred-label">Years</div><div class="cred-desc">Senior hotel leadership across 4★ and 5★ properties</div></div>
+      <div class="cred-card reveal d2"><div class="cred-num">1,000+</div><div class="cred-label">Rooms</div><div class="cred-desc">Managed across Australia and internationally</div></div>
+      <div class="cred-card reveal d3"><div class="cred-num">10+</div><div class="cred-label">Properties</div><div class="cred-desc">Led from pre-opening through to stabilised operations</div></div>
+      <div class="cred-card reveal d4"><div class="cred-num">Global</div><div class="cred-label">Availability</div><div class="cred-desc">Sydney-based · Available anywhere in the world</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label" style="color:var(--gold-lt);">Get In Touch</div>
+        <div class="section-title light">Start with a<br>Discovery Call</div>
+        <div class="gold-rule"><div class="gr-line s" style="background:rgba(184,151,58,.4);"></div><div class="gr-dot"></div><div class="gr-line l" style="background:rgba(184,151,58,.4);"></div></div>
+        <p class="contact-body">Whether you're opening a new property, need an urgent operational review, or want ongoing advisory support — book a free 30-minute discovery call. We'll tell you honestly whether we can help and what that would look like.</p>
+        <div class="contact-details">
+          <div class="c-item"><span class="c-label">Phone</span><span class="c-val">0403 733 724</span></div>
+          <div class="c-item"><span class="c-label">Email</span><span class="c-val">alok@aveba.com.au</span></div>
+          <div class="c-item"><span class="c-label">Location</span><span class="c-val">Sydney, NSW · Available Globally</span></div>
+        </div>
+        <div class="book-box">
+          <div>
+            <span class="book-title">Book a Discovery Call</span>
+            <span class="book-sub">30 minutes · Obligation free · Via phone or video</span>
+          </div>
+          <a href="https://calendly.com/alok-aveba/discovery-call" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <input type="hidden" name="_subject" value="Consultancy Enquiry — Ave-Ba House"/>
+          <input type="text" name="_gotcha" style="display:none"/>
+          <div class="form-row">
+            <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required/></div>
+            <div class="form-group"><label>Property / Company</label><input type="text" name="company" placeholder="Hotel or business name"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required/></div>
+            <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+61 or international"/></div>
+          </div>
+          <div class="form-group">
+            <label>Type of Engagement</label>
+            <select name="engagement">
+              <option value="">Select engagement type</option>
+              <option value="Pre-Opening">Pre-Opening &amp; Relaunch</option>
+              <option value="Operations Review">Operations Review</option>
+              <option value="Revenue Optimisation">Revenue Optimisation</option>
+              <option value="Guest Experience">Guest Experience Design</option>
+              <option value="People & Culture">People &amp; Culture</option>
+              <option value="F&B Strategy">F&amp;B Strategy</option>
+              <option value="Advisory Retainer">Advisory Retainer</option>
+              <option value="Day Consulting">Day Consulting</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Tell us about your property</label><textarea name="message" placeholder="Property name, location, number of rooms, and what challenge you're facing..."></textarea></div>
+          <button type="submit" class="btn-submit" id="submit-btn">Send Enquiry</button>
+          <p class="form-note">All enquiries handled in strict confidence. Response within 24 hours.</p>
+          <div class="form-success" id="form-success">
+            <strong>Enquiry Sent ✓</strong>
+            <p>Thank you — we'll be in touch within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-name">AVE<em>-</em>BA HOUSE</div>
+      <div class="footer-tag">Luxury for Everyday Living</div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-col-head">Our Brands</div>
+        <div class="footer-col-links">
+          <a href="/consultancy">Consultancy</a>
+          <a href="/atelier">Atelier</a>
+          <a href="/loom">Loom</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-head">Consultancy</div>
+        <div class="footer-col-links">
+          <a href="#services">Our Services</a>
+          <a href="#engagement">Pricing</a>
+          <a href="#contact">Book a Call</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-head">Contact</div>
+        <div class="footer-col-links">
+          <a href="mailto:alok@aveba.com.au">alok@aveba.com.au</a>
+          <a href="tel:0403733724">0403 733 724</a>
+          <a href="https://aveba.com.au">aveba.com.au</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ave-Ba House Pty Ltd &nbsp;·&nbsp; ABN Registered &nbsp;·&nbsp; Sydney, Australia</div>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#contact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const form=document.getElementById('contact-form');
+const btn=document.getElementById('submit-btn');
+const success=document.getElementById('form-success');
+if(form){form.addEventListener('submit',async e=>{e.preventDefault();btn.textContent='Sending...';btn.disabled=true;try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(r.ok){form.reset();btn.style.display='none';success.style.display='block';}else{btn.textContent='Try Again';btn.disabled=false;}}catch{btn.textContent='Try Again';btn.disabled=false;}});}
+</script>
+</body>
+</html>
