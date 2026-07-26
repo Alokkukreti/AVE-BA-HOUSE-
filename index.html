@@ -218,9 +218,9 @@ footer{background:#0a1118;border-top:1px solid rgba(184,151,58,0.1);padding:44px
 <!-- COLLECTIONS -->
 <section id="collections">
   <div class="col-tabs">
-    <button class="col-tab active" onclick="showCol('everyday',this)">Everyday</button>
-    <button class="col-tab" onclick="showCol('kids',this)">Kids</button>
-    <button class="col-tab" onclick="showCol('christmas',this)">Christmas</button>
+      <button data-id="everyday" class="col-tab active" onclick="showCol('everyday',this)">Everyday</button>
+      <button data-id="kids" class="col-tab" onclick="showCol('kids',this)">Kids</button>
+      <button data-id="christmas" class="col-tab" onclick="showCol('christmas',this)">Christmas</button>
   </div>
 
   <!-- EVERYDAY -->
@@ -398,7 +398,10 @@ footer{background:#0a1118;border-top:1px solid rgba(184,151,58,0.1);padding:44px
   const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08});
   reveals.forEach(el=>obs.observe(el));
   function showColNav(id){
-    showCol(id, document.querySelector('.col-tab[onclick*="\''+id+'\'"]'));
+    document.querySelectorAll('.col-section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.col-tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('col-'+id).classList.add('active');
+    document.querySelector('.col-tab[data-id="'+id+'"]').classList.add('active');
     document.getElementById('collections').scrollIntoView({behavior:'smooth'});
   }
   function showCol(id,btn){
